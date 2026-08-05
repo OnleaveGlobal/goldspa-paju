@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://goldspa-paju.co.kr/sitemap.xml
+Disallow: /goldspa-single-archive.html
