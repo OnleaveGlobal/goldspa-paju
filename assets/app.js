@@ -39,7 +39,7 @@ document.querySelectorAll('.rise,.unveil').forEach(el=>io.observe(el));
   }
   (function heroSlides(){
     var media=document.querySelector(".hero-media"); if(!media)return;
-    var srcs=[IMGBASE+"images/p005.jpg",IMGBASE+"images/pajugold_032.jpg",IMGBASE+"images/pajugold_045.jpg"];
+    var srcs=[IMGBASE+"images/p005.jpg",IMGBASE+"images/hero2.jpg",IMGBASE+"images/pajugold_045.jpg"];
     var pl=media.querySelector(".plabel"); if(pl)pl.style.display="none";
     var slides=srcs.map(function(src,i){
       var d=document.createElement("div"); d.className="hero-slide"+(i===0?" on":"");

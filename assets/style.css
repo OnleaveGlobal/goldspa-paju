@@ -1202,7 +1202,12 @@ header.scrolled .langtoggle a,body.subpage .langtoggle a{color:var(--muted)}
 header.scrolled .langtoggle a[aria-current],body.subpage .langtoggle a[aria-current]{color:var(--ink)}
 header.scrolled .langtoggle a + a::before,body.subpage .langtoggle a + a::before{color:var(--line)}
 @media(hover:hover){.langtoggle a:not([aria-current]):hover{color:var(--accent)}}
-@media(max-width:900px){.bar .langtoggle{display:none}}
+/* 모바일에서도 헤더에 KR/EN 노출 — 우측(테마·햄버거)과 묶는다.
+   기존엔 숨기고 햄버거 메뉴에만 있었는데 잘 안 보인다는 피드백. */
+@media(max-width:900px){
+  .bar .langtoggle{display:inline-flex;margin-left:auto}
+  .bar .themetoggle{margin-left:6px}
+}
 .mmenu-lang{margin-top:22px;display:inline-flex;gap:10px;font-size:1rem;font-weight:700;color:var(--muted)}
 .mmenu-lang a{padding:6px 12px;border:1px solid var(--line);border-radius:100px;color:var(--ink)}
 .mmenu-lang a.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
