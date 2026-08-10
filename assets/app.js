@@ -29,7 +29,7 @@ document.querySelectorAll('.rise,.unveil').forEach(el=>io.observe(el));
   /* /en/ 하위 페이지는 한 단계 깊으므로 이미지 경로에 ../ 접두사가 필요하다.
      (HTML 안의 img 는 페이지별로 경로를 맞추지만, 아래처럼 JS가 하드코딩한 경로는 여기서 보정) */
   var IMGBASE=/\/en\//.test(location.pathname)?"../":"";
-  const IMG={"hero":IMGBASE+"images/p005.jpg","emotion":IMGBASE+"images/p046.jpg","hygiene":IMGBASE+"images/p048.jpg"}; const order=[];
+  const IMG={"hero":IMGBASE+"images/p005.webp","emotion":IMGBASE+"images/p046.webp","hygiene":IMGBASE+"images/p048.webp"}; const order=[];
   function setbg(el,key){
     if(!el||!key||!IMG[key])return;
     el.style.backgroundImage="url('"+IMG[key]+"')";
@@ -39,7 +39,7 @@ document.querySelectorAll('.rise,.unveil').forEach(el=>io.observe(el));
   }
   (function heroSlides(){
     var media=document.querySelector(".hero-media"); if(!media)return;
-    var srcs=[IMGBASE+"images/p005.jpg",IMGBASE+"images/hero2.jpg",IMGBASE+"images/pajugold_045.jpg"];
+    var srcs=[IMGBASE+"images/p005.webp",IMGBASE+"images/hero2.webp",IMGBASE+"images/pajugold_045.webp"];
     var pl=media.querySelector(".plabel"); if(pl)pl.style.display="none";
     var slides=srcs.map(function(src,i){
       var d=document.createElement("div"); d.className="hero-slide"+(i===0?" on":"");
