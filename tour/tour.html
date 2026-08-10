@@ -546,7 +546,7 @@ function buildGallery(){
   const g=document.getElementById('gallery');
   SCENES.forEach((s,i)=>{
     const d=document.createElement('div'); d.className='thumb'+(i===0?' active':''); d.dataset.id=s.id;
-    const img=document.createElement('img'); img.src=s.image; img.alt=s.name; img.loading='lazy';
+    const img=document.createElement('img'); img.src=s.image.replace('images/','images/thumb/'); img.alt=s.name; img.loading='lazy'; img.decoding='async';
     const veil=document.createElement('div'); veil.className='veil';
     const cap=document.createElement('div'); cap.className='cap'; cap.textContent=s.name;
     const num=document.createElement('div'); num.className='num'; num.textContent=String(i+1).padStart(2,'0');
