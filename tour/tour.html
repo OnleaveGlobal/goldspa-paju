@@ -175,8 +175,8 @@
   <div class="scrim bot"></div>
   <div id="panorama"></div>
 
-  <!-- 좌측 상단 로고 (표시 전용. 이미지만 표시. 파일: images/brandmark.png) -->
-  <img class="brand-logo top" src="images/brandmark.png" alt="" onerror="this.style.display='none'">
+  <!-- 좌측 상단 로고 (표시 전용. 이미지만 표시. 파일: images/brandmark.webp) -->
+  <img class="brand-logo top" src="images/brandmark.webp" alt="" onerror="this.style.display='none'">
 
   <div class="scene-label"><div class="title" id="sceneName"></div></div>
 
@@ -200,8 +200,8 @@
     <svg class="chev" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg>
   </button>
 
-  <!-- 좌측 하단 로고 (표시 전용. 링크가 필요하면 <a href="..."> 로 감싸세요. 파일: images/logo.png) -->
-  <img class="brand-logo" src="images/logo.png" alt="" onerror="this.style.display='none'">
+  <!-- 좌측 하단 로고 (표시 전용. 링크가 필요하면 <a href="..."> 로 감싸세요. 파일: images/logo.webp) -->
+  <img class="brand-logo" src="images/logo.webp" alt="" onerror="this.style.display='none'">
 
 <script>
 /* =====================================================================
@@ -225,7 +225,7 @@ const SCENES = [
   {
     id: "scene",
     name: "로비",
-    image: "images/01.jpg",
+    image: "images/01.webp",
     yaw: -158.7, pitch: -18.5, hfov: 95.3,
     hotSpots: [
       { type:"move", yaw:-4, pitch:-12.1, to:"1", text:"남탕_탈의실1" },
@@ -235,7 +235,7 @@ const SCENES = [
   {
     id: "1",
     name: "탈의실1",
-    image: "images/02.jpg",
+    image: "images/02.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-126.5, pitch:-19.7, to:"2", text:"남탕_탈의실2" },
@@ -245,7 +245,7 @@ const SCENES = [
   {
     id: "2",
     name: "탈의실2",
-    image: "images/03.jpg",
+    image: "images/03.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:0, pitch:-10.5, to:"3", text:"남탕_탈의실3" },
@@ -255,7 +255,7 @@ const SCENES = [
   {
     id: "3",
     name: "탈의실3",
-    image: "images/04.jpg",
+    image: "images/04.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:48.8, pitch:-8.7, to:"scene2", text:"남탕_파우더룸" },
@@ -266,7 +266,7 @@ const SCENES = [
   {
     id: "scene2",
     name: "파우더룸",
-    image: "images/05.jpg",
+    image: "images/05.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-142.5, pitch:-13.7, to:"3", text:"남탕_탈의실3" },
@@ -275,7 +275,7 @@ const SCENES = [
   {
     id: "scene3",
     name: "전경",
-    image: "images/06.jpg",
+    image: "images/06.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-119.8, pitch:-9.3, to:"3", text:"남탕_탈의실3" },
@@ -287,7 +287,7 @@ const SCENES = [
   {
     id: "scene4",
     name: "습식사우나",
-    image: "images/07.jpg",
+    image: "images/07.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-72.3, pitch:-27.4, to:"scene3", text:"남탕_전경" },
@@ -296,7 +296,7 @@ const SCENES = [
   {
     id: "scene5",
     name: "건식사우나",
-    image: "images/08.jpg",
+    image: "images/08.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-39.6, pitch:-33.9, to:"scene3", text:"남탕_전경" },
@@ -305,7 +305,7 @@ const SCENES = [
   {
     id: "22",
     name: "전경2",
-    image: "images/09.jpg",
+    image: "images/09.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:135.8, pitch:-13.4, to:"scene4", text:"남탕_습식사우나" },
@@ -316,7 +316,7 @@ const SCENES = [
   {
     id: "jeo",
     name: "저온사우나",
-    image: "images/10.jpg",
+    image: "images/10.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-36.7, pitch:-25, to:"scene11", text:"여탕_전경" },
@@ -325,7 +325,7 @@ const SCENES = [
   {
     id: "scene6",
     name: "고온사우나",
-    image: "images/11.jpg",
+    image: "images/11.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-153.8, pitch:-17.7, to:"scene11", text:"여탕_전경" },
@@ -334,7 +334,7 @@ const SCENES = [
   {
     id: "scene7",
     name: "습식사우나",
-    image: "images/12.jpg",
+    image: "images/12.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-33.6, pitch:-38.7, to:"scene11", text:"여탕_전경" },
@@ -343,7 +343,7 @@ const SCENES = [
   {
     id: "scene8",
     name: "원적외선방",
-    image: "images/13.jpg",
+    image: "images/13.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-17.1, pitch:-17, to:"scene11", text:"여탕_전경" },
@@ -352,7 +352,7 @@ const SCENES = [
   {
     id: "scene9",
     name: "세신실",
-    image: "images/14.jpg",
+    image: "images/14.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:48.1, pitch:-15.5, to:"32", text:"여탕_전경3" },
@@ -361,7 +361,7 @@ const SCENES = [
   {
     id: "32",
     name: "전경3",
-    image: "images/15.jpg",
+    image: "images/15.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:117.7, pitch:-17.1, to:"scene9", text:"여탕_세신실" },
@@ -372,7 +372,7 @@ const SCENES = [
   {
     id: "scene10",
     name: "냉탕",
-    image: "images/16.jpg",
+    image: "images/16.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:170, pitch:-38.5, to:"23", text:"여탕_전경2" },
@@ -381,7 +381,7 @@ const SCENES = [
   {
     id: "23",
     name: "전경2",
-    image: "images/17.jpg",
+    image: "images/17.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:157.1, pitch:-14.7, to:"scene10", text:"여탕_냉탕" },
@@ -392,7 +392,7 @@ const SCENES = [
   {
     id: "scene11",
     name: "전경",
-    image: "images/18.jpg",
+    image: "images/18.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-10.9, pitch:-13.2, to:"24", text:"여탕_탈의실2" },
@@ -406,7 +406,7 @@ const SCENES = [
   {
     id: "scene12",
     name: "파우더룸",
-    image: "images/19.jpg",
+    image: "images/19.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-4, pitch:-14.6, to:"24", text:"여탕_탈의실2" },
@@ -415,7 +415,7 @@ const SCENES = [
   {
     id: "24",
     name: "탈의실2",
-    image: "images/20.jpg",
+    image: "images/20.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:153, pitch:-10.9, to:"scene12", text:"여탕_파우더룸" },
@@ -426,7 +426,7 @@ const SCENES = [
   {
     id: "12",
     name: "탈의실1",
-    image: "images/21.jpg",
+    image: "images/21.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:48.1, pitch:-12.2, to:"scene13", text:"찜질방_여탕 입구" },
@@ -436,7 +436,7 @@ const SCENES = [
   {
     id: "scene13",
     name: "여탕 입구",
-    image: "images/22.jpg",
+    image: "images/22.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:16.4, pitch:-11.9, to:"scene17", text:"찜질방 로비" },
@@ -446,7 +446,7 @@ const SCENES = [
   {
     id: "scene14",
     name: "키즈존",
-    image: "images/23.jpg",
+    image: "images/23.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:172.3, pitch:-14.7, to:"scene17", text:"찜질방 로비" },
@@ -455,7 +455,7 @@ const SCENES = [
   {
     id: "scene15",
     name: "한증막 내부",
-    image: "images/24.jpg",
+    image: "images/24.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:6.3, pitch:-12.1, to:"scene16", text:"찜질방 메인" },
@@ -464,7 +464,7 @@ const SCENES = [
   {
     id: "scene16",
     name: "찜질방 메인",
-    image: "images/25.jpg",
+    image: "images/25.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:-2.8, pitch:-8.7, to:"scene17", text:"찜질방 로비" },
@@ -475,7 +475,7 @@ const SCENES = [
   {
     id: "scene17",
     name: "찜질방 로비",
-    image: "images/26.jpg",
+    image: "images/26.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:123.7, pitch:-7.3, to:"scene19", text:"찜질방_남탕 입구" },
@@ -487,7 +487,7 @@ const SCENES = [
   {
     id: "scene18",
     name: "매점",
-    image: "images/27.jpg",
+    image: "images/27.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:66.3, pitch:-11, to:"scene19", text:"찜질방_남탕 입구" },
@@ -497,7 +497,7 @@ const SCENES = [
   {
     id: "scene19",
     name: "남탕 입구",
-    image: "images/28.jpg",
+    image: "images/28.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
       { type:"move", yaw:22.3, pitch:-20.7, to:"2", text:"남탕_탈의실2" },

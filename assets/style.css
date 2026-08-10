@@ -684,8 +684,8 @@ header.scrolled .logo .logo-k,body.subpage .logo .logo-k{display:block}
 /* soft specular glint travelling once across the mark */
 .splash-logo .lg-glint{
   position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:screen;
-  -webkit-mask:url(images/logo-gold.png) center/contain no-repeat;
-          mask:url(images/logo-gold.png) center/contain no-repeat;
+  -webkit-mask:url(images/logo-gold.webp) center/contain no-repeat;
+          mask:url(images/logo-gold.webp) center/contain no-repeat;
   background:linear-gradient(100deg,transparent 43%,rgba(255,249,231,.72) 50%,transparent 57%);
   background-repeat:no-repeat;background-size:230% 100%;background-position:165% 0;opacity:0;
   animation:lgglint 1.6s cubic-bezier(.4,0,.2,1) 1.6s forwards;
@@ -947,7 +947,7 @@ header.scrolled .logo .logo-k,body.subpage .logo .logo-k{display:block}
   background-color:#17130e;
   background-image:
     linear-gradient(rgba(23,19,14,.82),rgba(23,19,14,.92)),
-    url(../images/splash-bath.jpg);
+    url(../images/splash-bath.webp);
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -1048,7 +1048,7 @@ header.scrolled .logo .logo-k,body.subpage .logo .logo-k{display:block}
    .shell 이 z-index:2 라 ::before 를 깔면 글자 뒤로 들어간다.
    다크모드에서는 밝은 그림이 떠 보이므로 더 낮춘다. */
 .intro::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background:url(../images/intro-bg.jpg) center/cover no-repeat;opacity:.17}
+  background:url(../images/intro-bg.webp) center/cover no-repeat;opacity:.17}
 @media(prefers-color-scheme:dark){:root:not([data-theme]) .intro::before{opacity:.08}}
 :root[data-theme="dark"] .intro::before{opacity:.08}
 
