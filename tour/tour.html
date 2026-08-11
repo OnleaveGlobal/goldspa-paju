@@ -649,10 +649,13 @@ function onMoveClick(evt, args){ travelTo(args.to, args.faceYaw, args.facePitch)
 /* 갤러리·이전/다음 버튼도 같은 모션 사용(방향은 현재 시점 기준) */
 function goTo(id){ travelTo(id); }
 function wireControls(){
-  document.getElementById('btnHome').onclick=()=>{const s=SCENES[cur];viewer.setPitch(s.pitch??-4);viewer.setYaw(s.yaw??0);viewer.setHfov(s.hfov??100);};
+  const rot=document.getElementById('btnRotate');
+  document.getElementById('btnHome').onclick=()=>{
+    if(rotating){rotating=false;rot.classList.remove('on');viewer.stopAutoRotate();}   // 자동회전 중엔 매 프레임 yaw를 덮어써 리셋이 안 먹힘 — 먼저 꺼야 함
+    const s=SCENES[cur];viewer.setPitch(s.pitch??-4);viewer.setYaw(s.yaw??0);viewer.setHfov(s.hfov??100);
+  };
   document.getElementById('btnPrev').onclick=()=>goTo(SCENES[(cur-1+SCENES.length)%SCENES.length].id);
   document.getElementById('btnNext').onclick=()=>goTo(SCENES[(cur+1)%SCENES.length].id);
-  const rot=document.getElementById('btnRotate');
   rot.onclick=()=>{rotating=!rotating;rot.classList.toggle('on',rotating);if(rotating)viewer.startAutoRotate(-3);else viewer.stopAutoRotate();};
   document.getElementById('btnFull').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();};
 }
