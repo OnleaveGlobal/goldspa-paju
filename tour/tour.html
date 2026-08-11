@@ -42,7 +42,7 @@
     --gold:#ffffff; --gold-bright:#e8e8e8;
     --glass:rgba(24,24,24,.62); --glass-strong:rgba(16,16,16,.88);
     --hair:rgba(255,255,255,.12);
-    --pin:#e0a52a;   /* 이동 핀 색상(호버 시 채워지는 색) — 에디터 설정에서 바뀜 */
+    --pin:#ffffff;   /* 이동 핀 색상(호버 시 채워지는 색) — 에디터 설정에서 바뀜 */
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
@@ -224,285 +224,324 @@
 const SCENES = [
   {
     id: "scene",
-    name: "로비",
+    name: "여탕_전경",
     image: "images/01.webp",
-    yaw: -158.7, pitch: -18.5, hfov: 95.3,
+    yaw: -141.4, pitch: 5.3, hfov: 104,
     hotSpots: [
-      { type:"move", yaw:-4, pitch:-12.1, to:"1", text:"남탕_탈의실1" },
-      { type:"move", yaw:128.7, pitch:-16.2, to:"12", text:"탈의실1" },
-    ]
-  },
-  {
-    id: "1",
-    name: "탈의실1",
-    image: "images/02.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:-126.5, pitch:-19.7, to:"2", text:"남탕_탈의실2" },
-      { type:"move", yaw:19.5, pitch:-23.7, to:"scene", text:"로비" },
-    ]
-  },
-  {
-    id: "2",
-    name: "탈의실2",
-    image: "images/03.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:0, pitch:-10.5, to:"3", text:"남탕_탈의실3" },
-      { type:"move", yaw:132, pitch:-12.9, to:"1", text:"남탕_탈의실1" },
-    ]
-  },
-  {
-    id: "3",
-    name: "탈의실3",
-    image: "images/04.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:48.8, pitch:-8.7, to:"scene2", text:"남탕_파우더룸" },
-      { type:"move", yaw:96.8, pitch:-10.6, to:"scene3", text:"남탕_전경" },
-      { type:"move", yaw:-69.5, pitch:-19.3, to:"2", text:"남탕_탈의실2" },
+      { type:"move", yaw:-10.9, pitch:-13.2, to:"22", text:"여탕_탈의실2" },
+      { type:"move", yaw:-125, pitch:-7.9, to:"scene3", text:"여탕_고온사우나" },
+      { type:"move", yaw:-157.9, pitch:-2.8, to:"scene4", text:"여탕_습식사우나" },
+      { type:"move", yaw:-102.5, pitch:-9, to:"scene2", text:"여탕_중온사우나" },
+      { type:"move", yaw:-172.8, pitch:-3.2, to:"scene5", text:"여탕_원적외선방" },
+      { type:"move", yaw:-145.8, pitch:-5.9, to:"2", text:"여탕_전경2" },
     ]
   },
   {
     id: "scene2",
-    name: "파우더룸",
-    image: "images/05.webp",
+    name: "여탕_중온사우나",
+    image: "images/02.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-142.5, pitch:-13.7, to:"3", text:"남탕_탈의실3" },
+      { type:"move", yaw:-36.7, pitch:-25, to:"scene", text:"여탕_전경" },
     ]
   },
   {
     id: "scene3",
-    name: "전경",
-    image: "images/06.webp",
+    name: "여탕_고온사우나",
+    image: "images/03.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-119.8, pitch:-9.3, to:"3", text:"남탕_탈의실3" },
-      { type:"move", yaw:-47.2, pitch:-3.1, to:"scene5", text:"남탕_건식사우나" },
-      { type:"move", yaw:-24.7, pitch:-2.1, to:"scene4", text:"남탕_습식사우나" },
-      { type:"move", yaw:-4.1, pitch:-4.3, to:"22", text:"남탕_전경2" },
+      { type:"move", yaw:-153.8, pitch:-17.7, to:"scene", text:"여탕_전경" },
     ]
   },
   {
     id: "scene4",
-    name: "습식사우나",
-    image: "images/07.webp",
+    name: "여탕_습식사우나",
+    image: "images/04.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-72.3, pitch:-27.4, to:"scene3", text:"남탕_전경" },
+      { type:"move", yaw:-33.6, pitch:-38.7, to:"scene", text:"여탕_전경" },
     ]
   },
   {
     id: "scene5",
-    name: "건식사우나",
-    image: "images/08.webp",
+    name: "여탕_원적외선방",
+    image: "images/05.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-39.6, pitch:-33.9, to:"scene3", text:"남탕_전경" },
-    ]
-  },
-  {
-    id: "22",
-    name: "전경2",
-    image: "images/09.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:135.8, pitch:-13.4, to:"scene4", text:"남탕_습식사우나" },
-      { type:"move", yaw:101.4, pitch:-4.3, to:"scene5", text:"남탕_건식사우나" },
-      { type:"move", yaw:34.3, pitch:-8.2, to:"scene19", text:"남탕_전경" },
-    ]
-  },
-  {
-    id: "jeo",
-    name: "저온사우나",
-    image: "images/10.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:-36.7, pitch:-25, to:"scene11", text:"여탕_전경" },
+      { type:"move", yaw:-17.1, pitch:-17, to:"scene", text:"여탕_전경" },
     ]
   },
   {
     id: "scene6",
-    name: "고온사우나",
-    image: "images/11.webp",
+    name: "여탕_세신실",
+    image: "images/06.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-153.8, pitch:-17.7, to:"scene11", text:"여탕_전경" },
+      { type:"move", yaw:48.1, pitch:-15.5, to:"3", text:"여탕_전경3" },
+    ]
+  },
+  {
+    id: "3",
+    name: "여탕_전경3",
+    image: "images/07.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:117.7, pitch:-17.1, to:"scene6", text:"여탕_세신실" },
+      { type:"move", yaw:-83.8, pitch:-12.9, to:"2", text:"여탕_전경2" },
+      { type:"move", yaw:-6.7, pitch:-11.5, to:"scene", text:"여탕_전경" },
     ]
   },
   {
     id: "scene7",
-    name: "습식사우나",
-    image: "images/12.webp",
+    name: "여탕_냉탕",
+    image: "images/08.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-33.6, pitch:-38.7, to:"scene11", text:"여탕_전경" },
+      { type:"move", yaw:170, pitch:-38.5, to:"2", text:"여탕_전경2" },
+    ]
+  },
+  {
+    id: "2",
+    name: "여탕_전경2",
+    image: "images/09.webp",
+    yaw: -40.4, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:157.1, pitch:-14.7, to:"scene7", text:"여탕_냉탕" },
+      { type:"move", yaw:-76.3, pitch:-11.9, to:"scene", text:"여탕_전경" },
+      { type:"move", yaw:-5.1, pitch:-10.2, to:"3", text:"여탕_전경3" },
     ]
   },
   {
     id: "scene8",
-    name: "원적외선방",
-    image: "images/13.webp",
+    name: "여탕_파우더룸",
+    image: "images/10.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-17.1, pitch:-17, to:"scene11", text:"여탕_전경" },
+      { type:"move", yaw:-4, pitch:-14.6, to:"22", text:"여탕_탈의실2" },
+    ]
+  },
+  {
+    id: "22",
+    name: "여탕_탈의실2",
+    image: "images/11.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:153, pitch:-10.9, to:"scene8", text:"여탕_파우더룸" },
+      { type:"move", yaw:100.5, pitch:-3.7, to:"scene", text:"여탕_전경" },
+      { type:"move", yaw:-95.2, pitch:-13.2, to:"1", text:"여탕_탈의실1" },
+    ]
+  },
+  {
+    id: "1",
+    name: "여탕_탈의실1",
+    image: "images/12.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:48.1, pitch:-12.2, to:"scene9", text:"찜질방_여탕 입구" },
+      { type:"move", yaw:167.7, pitch:-9.2, to:"22", text:"여탕_탈의실2" },
     ]
   },
   {
     id: "scene9",
-    name: "세신실",
-    image: "images/14.webp",
+    name: "찜질방_여탕 입구",
+    image: "images/13.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:48.1, pitch:-15.5, to:"32", text:"여탕_전경3" },
-    ]
-  },
-  {
-    id: "32",
-    name: "전경3",
-    image: "images/15.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:117.7, pitch:-17.1, to:"scene9", text:"여탕_세신실" },
-      { type:"move", yaw:-83.8, pitch:-12.9, to:"23", text:"여탕_전경2" },
-      { type:"move", yaw:-6.7, pitch:-11.5, to:"scene11", text:"여탕_전경" },
+      { type:"move", yaw:16.4, pitch:-11.9, to:"scene13", text:"찜질방 로비" },
+      { type:"move", yaw:150.2, pitch:-16.1, to:"1", text:"여탕_탈의실1" },
     ]
   },
   {
     id: "scene10",
-    name: "냉탕",
-    image: "images/16.webp",
+    name: "키즈존",
+    image: "images/14.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:170, pitch:-38.5, to:"23", text:"여탕_전경2" },
-    ]
-  },
-  {
-    id: "23",
-    name: "전경2",
-    image: "images/17.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:157.1, pitch:-14.7, to:"scene10", text:"여탕_냉탕" },
-      { type:"move", yaw:-76.3, pitch:-11.9, to:"scene11", text:"여탕_전경" },
-      { type:"move", yaw:-5.1, pitch:-10.2, to:"32", text:"여탕_전경3" },
+      { type:"move", yaw:172.3, pitch:-14.7, to:"scene13", text:"찜질방 로비" },
     ]
   },
   {
     id: "scene11",
-    name: "전경",
-    image: "images/18.webp",
+    name: "한증막 내부",
+    image: "images/15.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-10.9, pitch:-13.2, to:"24", text:"여탕_탈의실2" },
-      { type:"move", yaw:-125, pitch:-7.9, to:"scene6", text:"여탕_고온사우나" },
-      { type:"move", yaw:-157.9, pitch:-2.8, to:"scene7", text:"여탕_습식사우나" },
-      { type:"move", yaw:-102.5, pitch:-9, to:"jeo", text:"여탕_중온사우나" },
-      { type:"move", yaw:-172.8, pitch:-3.2, to:"scene8", text:"여탕_원적외선방" },
-      { type:"move", yaw:-145.8, pitch:-5.9, to:"23", text:"여탕_전경2" },
+      { type:"move", yaw:6.3, pitch:-12.1, to:"scene12", text:"찜질방 메인" },
     ]
   },
   {
     id: "scene12",
-    name: "파우더룸",
-    image: "images/19.webp",
-    yaw: 0, pitch: -4, hfov: 100,
+    name: "찜질방 메인",
+    image: "images/16.webp",
+    yaw: -64, pitch: -6.3, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-4, pitch:-14.6, to:"24", text:"여탕_탈의실2" },
-    ]
-  },
-  {
-    id: "24",
-    name: "탈의실2",
-    image: "images/20.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:153, pitch:-10.9, to:"scene12", text:"여탕_파우더룸" },
-      { type:"move", yaw:100.5, pitch:-3.7, to:"scene11", text:"여탕_전경" },
-      { type:"move", yaw:-95.2, pitch:-13.2, to:"12", text:"여탕_탈의실1" },
-    ]
-  },
-  {
-    id: "12",
-    name: "탈의실1",
-    image: "images/21.webp",
-    yaw: 0, pitch: -4, hfov: 100,
-    hotSpots: [
-      { type:"move", yaw:48.1, pitch:-12.2, to:"scene13", text:"찜질방_여탕 입구" },
-      { type:"move", yaw:167.7, pitch:-9.2, to:"24", text:"여탕_탈의실2" },
+      { type:"move", yaw:-2.8, pitch:-8.7, to:"scene13", text:"찜질방 로비" },
+      { type:"move", yaw:-58.4, pitch:-9.3, to:"scene15", text:"찜질방_남탕 입구" },
+      { type:"move", yaw:156.5, pitch:-20.1, to:"scene11", text:"한증막 내부" },
+      { type:"move", yaw:-85.7, pitch:-10.9, to:"sogeumbang", text:"소금방" },
+      { type:"move", yaw:-68.3, pitch:-7.7, to:"aiseubang", text:"아이스방" },
     ]
   },
   {
     id: "scene13",
-    name: "여탕 입구",
-    image: "images/22.webp",
+    name: "찜질방 로비",
+    image: "images/17.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:16.4, pitch:-11.9, to:"scene17", text:"찜질방 로비" },
-      { type:"move", yaw:150.2, pitch:-16.1, to:"12", text:"여탕_탈의실1" },
+      { type:"move", yaw:123.7, pitch:-7.3, to:"scene15", text:"찜질방_남탕 입구" },
+      { type:"move", yaw:53.5, pitch:-4.7, to:"scene12", text:"찜질방 메인" },
+      { type:"move", yaw:-78.3, pitch:-5.8, to:"scene10", text:"키즈존" },
+      { type:"move", yaw:-122.8, pitch:-5.3, to:"scene9", text:"찜질방_여탕 입구" },
     ]
   },
   {
     id: "scene14",
-    name: "키즈존",
-    image: "images/23.webp",
+    name: "매점",
+    image: "images/18.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:172.3, pitch:-14.7, to:"scene17", text:"찜질방 로비" },
+      { type:"move", yaw:66.3, pitch:-11, to:"scene15", text:"찜질방_남탕 입구" },
+      { type:"move", yaw:124.6, pitch:-2.8, to:"scene12", text:"찜질방 메인" },
     ]
   },
   {
     id: "scene15",
-    name: "한증막 내부",
-    image: "images/24.webp",
+    name: "찜질방_남탕 입구",
+    image: "images/19.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:6.3, pitch:-12.1, to:"scene16", text:"찜질방 메인" },
+      { type:"move", yaw:22.3, pitch:-20.7, to:"24", text:"남탕_탈의실2" },
+      { type:"move", yaw:-112.9, pitch:-14.5, to:"scene14", text:"매점" },
+      { type:"move", yaw:151.1, pitch:-9, to:"scene12", text:"찜질방 메인" },
+    ]
+  },
+  {
+    id: "23",
+    name: "남탕_전경2",
+    image: "images/20.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:135.8, pitch:-13.4, to:"scene17", text:"남탕_습식사우나" },
+      { type:"move", yaw:101.4, pitch:-4.3, to:"scene16", text:"남탕_건식사우나" },
+      { type:"move", yaw:34.3, pitch:-8.2, to:"scene18", text:"남탕_전경" },
     ]
   },
   {
     id: "scene16",
-    name: "찜질방 메인",
-    image: "images/25.webp",
+    name: "남탕_건식사우나",
+    image: "images/21.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:-2.8, pitch:-8.7, to:"scene17", text:"찜질방 로비" },
-      { type:"move", yaw:-58.4, pitch:-9.3, to:"scene19", text:"찜질방_남탕 입구" },
-      { type:"move", yaw:156.5, pitch:-20.1, to:"scene15", text:"한증막 내부" },
+      { type:"move", yaw:-39.6, pitch:-33.9, to:"scene18", text:"남탕_전경" },
     ]
   },
   {
     id: "scene17",
-    name: "찜질방 로비",
-    image: "images/26.webp",
+    name: "남탕_습식사우나",
+    image: "images/22.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:123.7, pitch:-7.3, to:"scene19", text:"찜질방_남탕 입구" },
-      { type:"move", yaw:53.5, pitch:-4.7, to:"scene16", text:"찜질방 메인" },
-      { type:"move", yaw:-78.3, pitch:-5.8, to:"scene14", text:"키즈존" },
-      { type:"move", yaw:-122.8, pitch:-5.3, to:"scene13", text:"찜질방_여탕 입구" },
+      { type:"move", yaw:-72.3, pitch:-27.4, to:"scene18", text:"남탕_전경" },
     ]
   },
   {
     id: "scene18",
-    name: "매점",
-    image: "images/27.webp",
-    yaw: 0, pitch: -4, hfov: 100,
+    name: "남탕_전경",
+    image: "images/23.webp",
+    yaw: -10, pitch: 5.5, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:66.3, pitch:-11, to:"scene19", text:"찜질방_남탕 입구" },
-      { type:"move", yaw:124.6, pitch:-2.8, to:"scene16", text:"찜질방 메인" },
+      { type:"move", yaw:-119.8, pitch:-9.3, to:"32", text:"남탕_탈의실3" },
+      { type:"move", yaw:-47.2, pitch:-3.1, to:"scene16", text:"남탕_건식사우나" },
+      { type:"move", yaw:-24.7, pitch:-2.1, to:"scene17", text:"남탕_습식사우나" },
+      { type:"move", yaw:-4.1, pitch:-4.3, to:"23", text:"남탕_전경2" },
     ]
   },
   {
     id: "scene19",
-    name: "남탕 입구",
-    image: "images/28.webp",
+    name: "남탕_파우더룸",
+    image: "images/24.webp",
     yaw: 0, pitch: -4, hfov: 100,
     hotSpots: [
-      { type:"move", yaw:22.3, pitch:-20.7, to:"2", text:"남탕_탈의실2" },
-      { type:"move", yaw:-112.9, pitch:-14.5, to:"scene18", text:"매점" },
-      { type:"move", yaw:151.1, pitch:-9, to:"scene16", text:"찜질방 메인" },
+      { type:"move", yaw:-142.5, pitch:-13.7, to:"32", text:"남탕_탈의실3" },
+    ]
+  },
+  {
+    id: "32",
+    name: "남탕_탈의실3",
+    image: "images/25.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:48.8, pitch:-8.7, to:"scene19", text:"남탕_파우더룸" },
+      { type:"move", yaw:96.8, pitch:-10.6, to:"scene18", text:"남탕_전경" },
+      { type:"move", yaw:-69.5, pitch:-19.3, to:"24", text:"남탕_탈의실2" },
+    ]
+  },
+  {
+    id: "24",
+    name: "남탕_탈의실2",
+    image: "images/26.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:0, pitch:-10.5, to:"32", text:"남탕_탈의실3" },
+      { type:"move", yaw:132, pitch:-12.9, to:"12", text:"남탕_탈의실1" },
+    ]
+  },
+  {
+    id: "12",
+    name: "남탕_탈의실1",
+    image: "images/27.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:-126.5, pitch:-19.7, to:"24", text:"남탕_탈의실2" },
+      { type:"move", yaw:19.5, pitch:-23.7, to:"scene20", text:"로비" },
+    ]
+  },
+  {
+    id: "scene20",
+    name: "로비",
+    image: "images/28.webp",
+    yaw: -158.7, pitch: -18.5, hfov: 95.3,
+    hotSpots: [
+      { type:"move", yaw:-4, pitch:-12.1, to:"12", text:"남탕_탈의실1" },
+    ]
+  },
+  {
+    id: "aiseubang-2",
+    name: "아이스방_2",
+    image: "images/29.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:-97.6, pitch:-13.5, to:"aiseubang", text:"아이스방" },
+    ]
+  },
+  {
+    id: "sogeumbang-2",
+    name: "소금방_2",
+    image: "images/30.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:-70.8, pitch:-20.3, to:"sogeumbang", text:"소금방" },
+    ]
+  },
+  {
+    id: "sogeumbang",
+    name: "소금방",
+    image: "images/31.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:109.8, pitch:-16.4, to:"scene12", text:"찜질방 메인" },
+      { type:"move", yaw:-37.7, pitch:-21.9, to:"sogeumbang-2", text:"소금방_2" },
+    ]
+  },
+  {
+    id: "aiseubang",
+    name: "아이스방",
+    image: "images/32.webp",
+    yaw: 0, pitch: -4, hfov: 100,
+    hotSpots: [
+      { type:"move", yaw:-162.8, pitch:-9.5, to:"aiseubang-2", text:"아이스방_2" },
+      { type:"move", yaw:-1.7, pitch:-13.9, to:"scene12", text:"찜질방 메인" },
     ]
   },
 ];
