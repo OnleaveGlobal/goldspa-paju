@@ -651,8 +651,10 @@ function goTo(id){ travelTo(id); }
 function wireControls(){
   const rot=document.getElementById('btnRotate');
   document.getElementById('btnHome').onclick=()=>{
-    if(rotating){rotating=false;rot.classList.remove('on');viewer.stopAutoRotate();}   // 자동회전 중엔 매 프레임 yaw를 덮어써 리셋이 안 먹힘 — 먼저 꺼야 함
-    const s=SCENES[cur];viewer.setPitch(s.pitch??-4);viewer.setYaw(s.yaw??0);viewer.setHfov(s.hfov??100);
+    if(rotating){rotating=false;rot.classList.remove('on');viewer.stopAutoRotate();}   // 자동회전 중엔 매 프레임 yaw를 덮어써 이동/리셋이 안 먹힘 — 먼저 꺼야 함
+    const home=SCENES[0];
+    if(cur===0)viewer.setPitch(home.pitch??-4),viewer.setYaw(home.yaw??0),viewer.setHfov(home.hfov??100);   // 이미 첫 씬이면 시점만 기본값으로
+    else goTo(home.id);   // 아니면 첫 씬(스팟)으로 이동
   };
   document.getElementById('btnPrev').onclick=()=>goTo(SCENES[(cur-1+SCENES.length)%SCENES.length].id);
   document.getElementById('btnNext').onclick=()=>goTo(SCENES[(cur+1)%SCENES.length].id);
