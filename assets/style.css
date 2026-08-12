@@ -224,6 +224,9 @@ section{position:relative}
 .proof-grade svg{width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:1.4;flex:none}
 .proof-grade b{font-weight:700;color:var(--ink)}
 .proof-grade span{font-size:.92rem;color:var(--body);letter-spacing:-0.01em}
+.pw-body{margin-top:16px;font-size:.98rem;line-height:1.7;color:var(--body);letter-spacing:-0.01em}
+.pw-body .pw-em{color:var(--ink);font-weight:700}
+.pw-body .pw-link{color:var(--ink);font-weight:700;text-decoration:underline;white-space:nowrap}
 .proof-water{margin-top:clamp(34px,4.5vw,58px)}
 .pw-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1.5px solid var(--line)}
 .pw-head h3{font-size:clamp(1.1rem,1.7vw,1.35rem);font-weight:700;letter-spacing:-0.02em}
