@@ -1192,6 +1192,22 @@ header.scrolled .logo .logo-k,body.subpage .logo .logo-k{display:block}
 /* 저작권 한 줄 */
 footer .foot-bot{display:block;margin-top:clamp(12px,1.6vw,18px);padding-top:13px;
   border-top:1px solid var(--hero-line);font-size:.8rem;color:rgba(255,255,255,.4)}
+/* 제작 크레딧(onleave) — 넓은 화면(900px~)에서는 로고와 같은 줄 오른쪽 끝,
+   좁은 화면에서는 저작권 줄 아래 왼쪽. DOM은 저작권 다음에 두고 넓을 때만 격자로 끌어올린다. */
+.foot-by{display:flex;justify-content:flex-start;margin-top:16px}
+.foot-by img{width:min(170px,46vw);height:auto;opacity:.85}
+/* SNS — 좁은 화면에서는 사업자정보 아래 왼쪽 (넓은 화면은 아래 격자에서 저작권 줄 오른쪽으로) */
+.foot-social{margin-top:clamp(14px,2vw,20px)}
+@media(min-width:900px){
+  footer .shell{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:28px;align-items:start}
+  footer .foot-head{grid-column:1;grid-row:1}
+  footer .foot-biz{grid-column:1;grid-row:2}
+  footer .foot-bot{grid-column:1/-1;grid-row:3}
+  /* 저작권과 같은 칸에 겹쳐 두고 오른쪽 끝으로 — 저작권 윗줄(테두리)이 폭 전체를 지나가게 하려고 */
+  footer .foot-social{grid-column:2;grid-row:3;justify-self:end;align-self:center;margin-top:6px}
+  .foot-by{grid-column:2;grid-row:1;align-self:center;justify-content:flex-end;margin-top:0}
+  .foot-by img{width:220px}
+}
 
 /* ============ 언어 전환 (KR / EN) ============
    테마 토글과 같은 색 규칙: 히어로 위에선 흰색, 스크롤·서브페이지에선 잉크색. */
